@@ -1,0 +1,23 @@
+package arithmetic;
+import java.util.*;
+import java.lang.*;
+public class StringDemo {
+    public static void main(String args[]){
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter email:");
+        String email = s.nextLine();
+
+        boolean a = email.contains("gmail");
+
+        int i=email.indexOf("@");
+        String uname = email.substring(0,i);
+        String domain = email.substring(i+1,email.length());
+
+        System.out.println("The username is: "+uname+" and the domain name is "+domain);
+
+        if(a==true)
+            System.out.println("The mail belongs to gmail.");
+        else
+            System.out.println("Not gmail domain");
+    }
+}
