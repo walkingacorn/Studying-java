@@ -1,0 +1,50 @@
+package arithmetic;
+import java.lang.*;
+import java.util.*;
+
+import static java.lang.Math.pow;
+
+public class Calcu {
+    public static void main(String args[]){
+
+        Scanner s = new Scanner(System.in);
+        int op;
+        do {
+            System.out.println("Find area of a triangle\n1.Method 1\n2.Method 2\n3.Exit");
+            System.out.println("Enter your choice:");
+            op = s.nextInt();
+            double base,height,area,a,b,c,d;
+            switch(op){
+                case 1: {
+                          System.out.println("Enter base:"); 
+                          base = s.nextInt();
+                          System.out.println("Enter height:");
+                          height = s.nextInt();
+                          area = 0.5*base*height;
+                          System.out.println("Area: "+area);
+                }
+                        break;
+
+                case 2: {
+                         System.out.println("Enter side1:");
+                          a = s.nextInt();
+                         System.out.println("Enter side2:");
+                          b = s.nextInt();
+                         System.out.println("Enter side3:");
+                          c = s.nextInt();
+                          d = (a+b+c)/2;
+                          area = pow((d*(d-a)*(d-b)*(d-c)),0.5); //Heron's formula
+                          System.out.println("Area: "+area);
+                }
+                        break;
+
+                case 3: {System.out.println("Exiting...");}
+                        break;
+
+                default:{System.out.println("Invalid choice");}
+                         break;
+            }
+
+        }while(op!=3);
+    }
+}
